@@ -3006,7 +3006,7 @@ class YoutubeTabIE(YoutubeBaseInfoExtractor):
             browse = self._download_json(
                 'https://www.youtube.com/browse_ajax', None,
                 'Downloading page %d' % page_num,
-                headers=headers, query=continuation, fatal=False)
+                headers=headers, query=continuation, fatal=True)
             if not browse:
                 break
             response = try_get(browse, lambda x: x[1]['response'], dict)
